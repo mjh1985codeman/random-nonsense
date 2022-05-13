@@ -1,0 +1,23 @@
+{
+  "name": "random-nonsense",
+  "version": "1.0.0",
+  "description": "Just a fun little site that literally spits out random nonsense.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjh1985codeman/random-nonsense.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjh1985codeman/random-nonsense/issues"
+  },
+  "homepage": "https://github.com/mjh1985codeman/random-nonsense#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
