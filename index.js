@@ -1,3 +1,4 @@
+let wordList;
 
 //grab the button element and save it to the phraseBtn variable.  
 const phraseBtn = document.getElementById("phrase-btn");
@@ -8,9 +9,24 @@ const getRandomNumber = (min, max) => {
     console.log(phraseLength);
 };
 
+const getWords = async () =>
+{
+        const res = await fetch('./db/words.json', {
+            method: "GET",
+            headers: {
+                'Accept':'application/json',
+                'Content-Type':'application/json',
+            },
+        })
+        const words = res.json();
+        words.then(function(result) {
+            console.log(result);
+        })
+
+}                                                                                                                                                 
+
 const phraseGenerator = () => {
-    let words = phraseLength;
-    console.log(words);
+console.log("getWords: " + getWords());
     //need an api call to get a random word based on the phraseLength which is assigned
     //as soon as the window is loaded. 
 }
