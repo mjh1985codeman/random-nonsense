@@ -1,4 +1,4 @@
-let wordList;
+let wordList = [];
 
 //grab the button element and save it to the phraseBtn variable.  
 const phraseBtn = document.getElementById("phrase-btn");
@@ -20,7 +20,14 @@ const getWords = async () =>
         })
         const words = res.json();
         words.then(function(result) {
-            console.log(result);
+            const wordArray = Object.values(result)[0];
+            //for loop to push each word into the wordList array.
+            for (var i = 0; i < wordArray.length; i++) {
+            
+                wordList.push(wordArray[i]);
+                console.log(wordList);
+            }
+
         })
 
 }                                                                                                                                                 
