@@ -47,10 +47,12 @@ const getRandomPhrase = () => {
 }
 
 const phraseGenerator = () => {
+    
     getRandomNumber(2, 17);
-    getWords().then(getRandomPhrase());
+    getRandomPhrase();
 }
 //order matters.  You cannot apply a function to an event listener without it first being
 //defined. . .Added the event listener to the phraseBtn so that when its pressed it will
 //call the phraseGenerator function.   
 phraseBtn.addEventListener("click", phraseGenerator);
+getWords();
