@@ -6,7 +6,7 @@ const phraseBtn = document.getElementById("phrase-btn");
 let phraseLength;
 let randomIndex;
 
-let randomPhrase = [];
+// let randomPhrase = [];
 
 const getRandomNumber = (min, max) => {
     phraseLength = Math.floor(Math.random() * (max - min)) + min;
@@ -38,16 +38,21 @@ const getWords = async () =>
 
 const getRandomPhrase = () => {
     //setting the randomPhrase Array to empty again so that words don't just keep piling up. 
-    randomPhrase = [];
+    let randomPhrase = [];
     for (var i = 0; i < phraseLength; i++) {
         getRandomIndex(0, 395);
-        randomPhrase.push(wordList[randomIndex]);
+        randomPhrase.push(wordList[randomIndex] + " ");
     }
-    console.log("randomPhrase: " + randomPhrase);
+    //passing the updated randomPhrase as the argument for the displayPhrase function
+    displayPhrase(randomPhrase);
+}
+
+const displayPhrase = (phrase) => {
+    //taking the "randomPhrase" argument from the getRandomPhrase function renaming it 'phrase'
+    console.log("phrase: " + phrase);
 }
 
 const phraseGenerator = () => {
-    
     getRandomNumber(2, 17);
     getRandomPhrase();
 }
