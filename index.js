@@ -4,9 +4,16 @@ let wordList = [];
 const phraseBtn = document.getElementById("phrase-btn");
 //
 let phraseLength;
+let randomIndex;
+
+let randomPhrase = [];
+
 const getRandomNumber = (min, max) => {
     phraseLength = Math.floor(Math.random() * (max - min)) + min;
-    console.log(phraseLength);
+};
+
+const getRandomIndex = (min, max) => {
+        randomIndex = Math.floor(Math.random() * (max - min)) + min;
 };
 
 const getWords = async () =>
@@ -25,20 +32,25 @@ const getWords = async () =>
             for (var i = 0; i < wordArray.length; i++) {
             
                 wordList.push(wordArray[i]);
-                console.log(wordList);
-            }
-
+            }  
         })
+}
 
-}                                                                                                                                                 
+const getRandomPhrase = () => {
+    //setting the randomPhrase Array to empty again so that words don't just keep piling up. 
+    randomPhrase = [];
+    for (var i = 0; i < phraseLength; i++) {
+        getRandomIndex(0, 395);
+        randomPhrase.push(wordList[randomIndex]);
+    }
+    console.log("randomPhrase: " + randomPhrase);
+}
 
 const phraseGenerator = () => {
-console.log("getWords: " + getWords());
-    //need an api call to get a random word based on the phraseLength which is assigned
-    //as soon as the window is loaded. 
+    getRandomNumber(2, 17);
+    getWords().then(getRandomPhrase());
 }
 //order matters.  You cannot apply a function to an event listener without it first being
 //defined. . .Added the event listener to the phraseBtn so that when its pressed it will
 //call the phraseGenerator function.   
-window.onload = (getRandomNumber(3, 10));
 phraseBtn.addEventListener("click", phraseGenerator);
