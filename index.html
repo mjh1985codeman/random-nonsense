@@ -5,21 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Nonsense</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./styles.css"></link>
 </head>
 <body>
-    <header>
-        <h1>Random Nonsense!</h1>
-    </header>
-    <div>
-        <h2>Click the Button to spit out a random phrase!</h2>
-    </div>
-    <div>
-        <button id="phrase-btn">Click Me!</button>
-    </div>
-    <div>
-        <p id="phrase-text"></p>
-    </div>
-  
+  <div class = "container" >
+
+      <header>
+          <h1 class="d-flex justify-content-center">Random Nonsense!</h1>
+      </header>
+      <div>
+          <h2 class="d-flex justify-content-center">Click the Button to spit out a random phrase!</h2>
+      </div>
+      <div class="button-el d-flex justify-content-center">
+          <button id="phrase-btn" class="butn mx-auto">Click Me!</button>
+      </div>
+      <div class="phrase-el d-flex justify-content-center">
+         <p id="phrase-text" class="mx-auto phrase-txt"></p>
+      </div>
+  </div>
+
+      
+    
     <script src="./index.js"></script>
 </body>
 </html>
